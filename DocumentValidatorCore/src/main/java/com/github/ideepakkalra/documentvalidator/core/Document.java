@@ -6,13 +6,24 @@ package com.github.ideepakkalra.documentvalidator.core;
 import java.util.Date;
 import java.util.Map;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author Deepak
  *
  */
+@Entity
+@Table (name = "document")
 public class Document {
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	private String key;
+	private String code;
 	private DocumentType type;
 	private String name;
 	private String description;
@@ -20,6 +31,7 @@ public class Document {
 	private String createdBy;
 	private String challangeQue;
 	private String challangeAns;
+	@ElementCollection
 	private Map<String, String> metadata;
 	
 	/**
@@ -35,16 +47,16 @@ public class Document {
 		this.id = id;
 	}
 	/**
-	 * @return the key
+	 * @return the code
 	 */
-	public String getKey() {
-		return key;
+	public String getCode() {
+		return code;
 	}
 	/**
-	 * @param key the key to set
+	 * @param code the code to set
 	 */
-	public void setKey(String key) {
-		this.key = key;
+	public void setCode(String code) {
+		this.code = code;
 	}
 	/**
 	 * @return the type
@@ -141,5 +153,14 @@ public class Document {
 	 */
 	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
+	}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Document [id=" + id + ", code=" + code + ", type=" + type + ", name=" + name + ", description="
+				+ description + ", createdOn=" + createdOn + ", createdBy=" + createdBy + ", challangeQue="
+				+ challangeQue + ", challangeAns=" + challangeAns + ", metadata=" + metadata + "]";
 	}
 }

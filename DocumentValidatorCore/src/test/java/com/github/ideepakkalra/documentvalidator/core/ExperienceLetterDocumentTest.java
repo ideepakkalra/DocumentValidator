@@ -22,7 +22,7 @@ class ExperienceLetterDocumentTest {
 	private void beforeEach() {
 		document = new Document();
 		document.setId(1);
-		document.setKey("DocumentKey");
+		document.setCode("DocumentCode");
 		document.setName("DocumentName");
 		document.setType(DocumentType.EXPERIENCE_LETTER);
 		document.setDescription("DocumentDescription");
@@ -35,7 +35,7 @@ class ExperienceLetterDocumentTest {
 	@Test
 	void testDocumentProperties() {
 		assertEquals(1, document.getId());
-		assertEquals("DocumentKey", document.getKey());
+		assertEquals("DocumentCode", document.getCode());
 		assertEquals("DocumentName", document.getName());
 		assertEquals(DocumentType.EXPERIENCE_LETTER, document.getType());
 		assertEquals("DocumentDescription", document.getDescription());

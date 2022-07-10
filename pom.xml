@@ -11,6 +11,7 @@
 
 	<modules>
 		<module>DocumentValidatorCore</module>
+		<module>DocumentValidatorWeb</module>
 	</modules>
 	<url>https://github.com/ideepakkalra/DocumentValidator</url>
 

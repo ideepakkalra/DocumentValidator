@@ -22,7 +22,7 @@ class OfferLetterDocumentTest {
 	private void beforeEach() {
 		document = new Document();
 		document.setId(1);
-		document.setKey("DocumentKey");
+		document.setCode("DocumentCode");
 		document.setName("DocumentName");
 		document.setType(DocumentType.OFFER_LETTER);
 		document.setDescription("DocumentDescription");
@@ -35,7 +35,7 @@ class OfferLetterDocumentTest {
 	@Test
 	void testDocumentProperties() {
 		assertEquals(1, document.getId());
-		assertEquals("DocumentKey", document.getKey());
+		assertEquals("DocumentCode", document.getCode());
 		assertEquals("DocumentName", document.getName());
 		assertEquals(DocumentType.OFFER_LETTER, document.getType());
 		assertEquals("DocumentDescription", document.getDescription());

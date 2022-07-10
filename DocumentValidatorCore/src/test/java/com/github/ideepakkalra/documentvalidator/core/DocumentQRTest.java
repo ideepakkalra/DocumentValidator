@@ -17,7 +17,7 @@ class DocumentQRTest {
 	void testDocumentQRPathForOfferLetter() {
 		Document document = new Document();
 		document.setId(1);
-		document.setKey("DocumentKey");
+		document.setCode("DocumentKey");
 		document.setName("DocumentName");
 		document.setType(DocumentType.OFFER_LETTER);
 		document.setDescription("DocumentDescription");

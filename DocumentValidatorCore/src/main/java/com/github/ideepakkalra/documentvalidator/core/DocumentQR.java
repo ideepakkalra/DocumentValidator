@@ -32,8 +32,8 @@ public class DocumentQR {
 		if(document.getId()==null || document.getId()<=0)
 			throw new DocumentValidationExcception("Invalid document id.");
 		
-		if(document.getKey()==null || document.getKey().isEmpty())
-			document.setKey(document.getId() +"-" + document.getType());
+		if(document.getCode()==null || document.getCode().isEmpty())
+			document.setCode(document.getId() +"-" + document.getType());
 		//TODO: Change this to random alphanumeric value
 		
 		if(document.getChallangeQue()==null || document.getChallangeQue().isEmpty())
@@ -47,7 +47,7 @@ public class DocumentQR {
 		
 		if(!Files.exists(path)) {
 			try {
-				QRCode.from(Url.parse(System.getProperty("dv.base.url", "http://www.deepakkalra.co.in/") + document.getId() + "/" + document.getKey()))
+				QRCode.from(Url.parse(System.getProperty("dv.base.url", "http://www.deepakkalra.co.in/") + document.getId() + "/" + document.getCode()))
 				.writeTo(new BufferedOutputStream(new FileOutputStream(path.toString())));
 			} catch (FileNotFoundException e) {
 				throw new DocumentValidationExcception(e.getMessage());
