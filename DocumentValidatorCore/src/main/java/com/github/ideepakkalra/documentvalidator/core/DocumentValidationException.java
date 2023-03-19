@@ -7,17 +7,17 @@ package com.github.ideepakkalra.documentvalidator.core;
  * @author Deepak
  *
  */
-public class DocumentValidationExcception extends Exception {
+public class DocumentValidationException extends Exception {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public DocumentValidationExcception() {
+	public DocumentValidationException() {
 		super("Document validation failed.");
 	}
 	
-	public DocumentValidationExcception(String errorMessage) {
+	public DocumentValidationException(String errorMessage) {
 		super(errorMessage);
 	}
 }

@@ -36,7 +36,7 @@ class DocumentQRTest {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-		} catch (DocumentValidationExcception e) {
+		} catch (DocumentValidationException e) {
 			e.printStackTrace();
 		}
 	}

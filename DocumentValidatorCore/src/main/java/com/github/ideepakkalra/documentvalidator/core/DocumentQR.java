@@ -25,22 +25,22 @@ public class DocumentQR {
 	
 	private Path path;
 		
-	public DocumentQR(Document document) throws DocumentValidationExcception {
+	public DocumentQR(Document document) throws DocumentValidationException {
 		if(document==null)
-			throw new DocumentValidationExcception("Document is null.");
+			throw new DocumentValidationException("Document is null.");
 		
 		if(document.getId()==null || document.getId()<=0)
-			throw new DocumentValidationExcception("Invalid document id.");
+			throw new DocumentValidationException("Invalid document id.");
 		
 		if(document.getCode()==null || document.getCode().isEmpty())
 			document.setCode(document.getId() +"-" + document.getType());
 		//TODO: Change this to random alphanumeric value
 		
 		if(document.getChallangeQue()==null || document.getChallangeQue().isEmpty())
-			throw new DocumentValidationExcception("Invalid challange question.");
+			throw new DocumentValidationException("Invalid challange question.");
 		
 		if(document.getChallangeAns()==null || document.getChallangeAns().isEmpty())
-			throw new DocumentValidationExcception("Invalid challange answer.");
+			throw new DocumentValidationException("Invalid challange answer.");
 		
 		path = Paths.get(System.getProperty("dv.qr.dir", System.getProperty("user.home")) + File.separator + 
 				document.getType().getShortCode() + "-" + document.getId() + PNG_EXTENSION);
@@ -50,7 +50,7 @@ public class DocumentQR {
 				QRCode.from(Url.parse(System.getProperty("dv.base.url", "http://www.deepakkalra.co.in/") + document.getId() + "/" + document.getCode()))
 				.writeTo(new BufferedOutputStream(new FileOutputStream(path.toString())));
 			} catch (FileNotFoundException e) {
-				throw new DocumentValidationExcception(e.getMessage());
+				throw new DocumentValidationException(e.getMessage());
 			}
 		}
 	}
