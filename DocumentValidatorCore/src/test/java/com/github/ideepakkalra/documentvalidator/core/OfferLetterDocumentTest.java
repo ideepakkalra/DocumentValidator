@@ -19,17 +19,17 @@ class OfferLetterDocumentTest {
 	private Document document;
 	
 	@BeforeEach
-	private void beforeEach() {
+	void beforeEach() {
 		document = new Document();
 		document.setId(1);
 		document.setCode("DocumentCode");
 		document.setName("DocumentName");
 		document.setType(DocumentType.OFFER_LETTER);
 		document.setDescription("DocumentDescription");
-		document.setCreatedOn(new Date(1655940094807l));
+		document.setCreatedOn(new Date(1655940094807L));
 		document.setCreatedBy("DocumentUser");
-		document.setChallangeQue("What is last 4 digit of your SSN?");
-		document.setChallangeAns("1234");
+		document.setChallengeQue("What is last 4 digit of your SSN?");
+		document.setChallengeAns("1234");
 	}
 
 	@Test
@@ -39,9 +39,9 @@ class OfferLetterDocumentTest {
 		assertEquals("DocumentName", document.getName());
 		assertEquals(DocumentType.OFFER_LETTER, document.getType());
 		assertEquals("DocumentDescription", document.getDescription());
-		assertEquals(new Date(1655940094807l), document.getCreatedOn());
+		assertEquals(new Date(1655940094807L), document.getCreatedOn());
 		assertEquals("DocumentUser", document.getCreatedBy());
-		assertEquals("What is last 4 digit of your SSN?", document.getChallangeQue());
-		assertEquals("1234", document.getChallangeAns());
+		assertEquals("What is last 4 digit of your SSN?", document.getChallengeQue());
+		assertEquals("1234", document.getChallengeAns());
 	}
 }

@@ -29,8 +29,8 @@ public class Document {
 	private String description;
 	private Date createdOn;
 	private String createdBy;
-	private String challangeQue;
-	private String challangeAns;
+	private String challengeQue;
+	private String challengeAns;
 	@ElementCollection
 	private Map<String, String> metadata;
 	
@@ -119,28 +119,28 @@ public class Document {
 		this.createdBy = createdBy;
 	}
 	/**
-	 * @return the challangeQue
+	 * @return the challengeQue
 	 */
-	public String getChallangeQue() {
-		return challangeQue;
+	public String getChallengeQue() {
+		return challengeQue;
 	}
 	/**
-	 * @param challangeQue the challangeQue to set
+	 * @param challengeQue the challengeQue to set
 	 */
-	public void setChallangeQue(String challangeQue) {
-		this.challangeQue = challangeQue;
+	public void setChallengeQue(String challengeQue) {
+		this.challengeQue = challengeQue;
 	}
 	/**
-	 * @return the challangeAns
+	 * @return the challengeAns
 	 */
-	public String getChallangeAns() {
-		return challangeAns;
+	public String getChallengeAns() {
+		return challengeAns;
 	}
 	/**
-	 * @param challangeAns the challangeAns to set
+	 * @param challengeAns the challengeAns to set
 	 */
-	public void setChallangeAns(String challangeAns) {
-		this.challangeAns = challangeAns;
+	public void setChallengeAns(String challengeAns) {
+		this.challengeAns = challengeAns;
 	}
 	/**
 	 * @return the metadata
@@ -160,7 +160,7 @@ public class Document {
 	@Override
 	public String toString() {
 		return "Document [id=" + id + ", code=" + code + ", type=" + type + ", name=" + name + ", description="
-				+ description + ", createdOn=" + createdOn + ", createdBy=" + createdBy + ", challangeQue="
-				+ challangeQue + ", challangeAns=" + challangeAns + ", metadata=" + metadata + "]";
+				+ description + ", createdOn=" + createdOn + ", createdBy=" + createdBy + ", challengeQue="
+				+ challengeQue + ", challengeAns=" + challengeAns + ", metadata=" + metadata + "]";
 	}
 }

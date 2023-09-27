@@ -34,13 +34,13 @@ public class DocumentQR {
 		
 		if(document.getCode()==null || document.getCode().isEmpty())
 			document.setCode(document.getId() +"-" + document.getType());
-		//TODO: Change this to random alphanumeric value
+		//TODO: Change this to random alphanumeric value or UUID
 		
-		if(document.getChallangeQue()==null || document.getChallangeQue().isEmpty())
-			throw new DocumentValidationException("Invalid challange question.");
+		if(document.getChallengeQue()==null || document.getChallengeQue().isEmpty())
+			throw new DocumentValidationException("Invalid challenge question.");
 		
-		if(document.getChallangeAns()==null || document.getChallangeAns().isEmpty())
-			throw new DocumentValidationException("Invalid challange answer.");
+		if(document.getChallengeAns()==null || document.getChallengeAns().isEmpty())
+			throw new DocumentValidationException("Invalid challenge answer.");
 		
 		path = Paths.get(System.getProperty("dv.qr.dir", System.getProperty("user.home")) + File.separator + 
 				document.getType().getShortCode() + "-" + document.getId() + PNG_EXTENSION);

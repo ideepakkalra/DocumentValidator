@@ -13,10 +13,6 @@ public class DocumentValidationException extends Exception {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public DocumentValidationException() {
-		super("Document validation failed.");
-	}
-	
 	public DocumentValidationException(String errorMessage) {
 		super(errorMessage);
 	}
